@@ -8,7 +8,6 @@ import java.util.Map;
 
 public class Lector {
 
-    // Método para leer un archivo de texto y devolver su contenido como una cadena de Texto
     public static String llerArchivoTexto(String rutaArchivo) throws IOException {
         StringBuilder contenido = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
@@ -18,12 +17,11 @@ public class Lector {
             }
         }
         if (contenido.length() > 0) {
-            contenido.deleteCharAt(contenido.length() - 1); // Eliminar la última nueva línea
+            contenido.deleteCharAt(contenido.length() - 1);
         }
         return contenido.toString();
     }
 
-    // Método para contar la frecuencia de cada carácter en un texto
     public static Map<Character, Integer> contarFrecuencias(String texto) {
         Map<Character, Integer> frecuencias = new HashMap<>();
         for (char c : texto.toCharArray()) {
@@ -32,7 +30,6 @@ public class Lector {
         return frecuencias;
     }
 
-    // Método que combina los dos anteriores para leer un archivo y contar las frecuencias de los caracteres
     public static Map<Character, Integer> leerFrecuenciasDesdeArchivo(String rutaArchivo) throws IOException {
         String texto = llerArchivoTexto(rutaArchivo);
         return contarFrecuencias(texto);

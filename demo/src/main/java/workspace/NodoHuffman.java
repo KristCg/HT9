@@ -5,7 +5,7 @@ public class NodoHuffman implements Comparable<NodoHuffman> {
     private int frecuencia;
     private NodoHuffman izquierda, derecha;
 
-    // Getters y Setters (Necesarios)
+    // Getters y Setters 
     public char getCaracter() {
         return caracter;
     }
